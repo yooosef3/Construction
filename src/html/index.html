@@ -13,18 +13,180 @@
   <body>
     <header class="flex justify-between p-4 shadow">
       <div class="flex justify-between gap-4 items-center">
-        <div
-          class="group flex flex-col gap-2 cursor-pointer font-bold transition-all mt-1"
-        >
+        <!-- right hamburger and sidebar -->
+        <div class="relative" x-cloak x-data="{rightSide : false}">
           <div
-            class="w-10 h-1 bg-black group-hover:bg-orange-600 duration-200"
-          ></div>
-          <div
-            class="w-8 h-1 bg-black group-hover:bg-orange-600 duration-200"
-          ></div>
-          <div
-            class="w-6 h-1 bg-black group-hover:bg-orange-600 duration-200"
-          ></div>
+            x-on:click="rightSide = true"
+            class="group flex flex-col gap-2 cursor-pointer font-bold transition-all mt-1"
+          >
+            <div
+              class="w-10 h-1 bg-black group-hover:bg-orange-600 duration-200"
+            ></div>
+            <div
+              class="w-8 h-1 bg-black group-hover:bg-orange-600 duration-200"
+            ></div>
+            <div
+              class="w-6 h-1 bg-black group-hover:bg-orange-600 duration-200"
+            ></div>
+          </div>
+          <!--right sidebar -->
+          <aside
+            class="absolute flex flex-col -top-4 bg-white shadow-2xl z-10 w-72 h-[100vh] transition-all duration-300 ease-linear"
+            :class="rightSide ? '-right-4' : '-right-80'"
+          >
+            <div
+              class="flex flex-col gap-1 p-3 my-5 cursor-pointer"
+              x-on:click="rightSide = false "
+            >
+              <div
+                :class="rightSide ? 'rotate-45 -translate-x-0 translate-y-1 w-12 h-[3px]' : 'w-0 rotate-45'"
+                class="bg-black transition-all duration-100 delay-500"
+              ></div>
+              <div
+                :class="rightSide ? '-rotate-45 -translate-y-1 w-12 h-[3px]' : 'w-0 -rotate-45'"
+                class="bg-black transition-all duration-100 delay-300"
+              ></div>
+            </div>
+            <div class="flex flex-col items-center mb-2">
+              <h1 class="font-bold text-2xl text-zinc-900 mb-1">
+                پروژه های ما
+              </h1>
+              <h3 class="text-lg text-zinc-700">instagram - @code.load</h3>
+            </div>
+            <!-- right sidebar images -->
+            <div class="flex flex-col p-2 gap-2 overflow-y-auto">
+              <div class="relative">
+                <div>
+                  <img
+                    alt="project"
+                    src="../../assets/images/gallery-image-1-330x240.jpg"
+                  />
+                </div>
+                <div
+                  class="absolute z-10 inset-2 flex justify-center items-center bg-black bg-opacity-30 border"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffff"
+                    class="w-12 h-12 cursor-pointer hover:stroke-slate-300 duration-200"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative">
+                <div>
+                  <img
+                    alt="project"
+                    src="../../assets/images/gallery-image-2-330x240.jpg"
+                  />
+                </div>
+                <div
+                  class="absolute z-10 inset-2 flex justify-center items-center bg-black bg-opacity-30 border"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffff"
+                    class="w-12 h-12 cursor-pointer hover:stroke-slate-300 duration-200"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative">
+                <div>
+                  <img
+                    alt="project"
+                    src="../../assets/images/gallery-image-3-330x240.jpg"
+                  />
+                </div>
+                <div
+                  class="absolute z-10 inset-2 flex justify-center items-center bg-black bg-opacity-30 border"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffff"
+                    class="w-12 h-12 cursor-pointer hover:stroke-slate-300 duration-200"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative">
+                <div>
+                  <img
+                    alt="project"
+                    src="../../assets/images/gallery-image-4-330x240.jpg"
+                  />
+                </div>
+                <div
+                  class="absolute z-10 inset-2 flex justify-center items-center bg-black bg-opacity-30 border"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffff"
+                    class="w-12 h-12 cursor-pointer hover:stroke-slate-300 duration-200"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative">
+                <div>
+                  <img
+                    alt="project"
+                    src="../../assets/images/gallery-image-5-330x240.jpg"
+                  />
+                </div>
+                <div
+                  class="absolute z-10 inset-2 flex justify-center items-center bg-black bg-opacity-30 border"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ffff"
+                    class="w-12 h-12 cursor-pointer hover:stroke-slate-300 duration-200"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
         <div
           class="relative hidden lg:block"
@@ -115,7 +277,11 @@
             </ul>
           </div>
         </div>
-        <div class="relative hidden lg:block" x-cloak x-data="{openSearch: false}">
+        <div
+          class="relative hidden lg:block"
+          x-cloak
+          x-data="{openSearch: false}"
+        >
           <svg
             x-on:click="openSearch = !openSearch"
             xmlns="http://www.w3.org/2000/svg"
@@ -131,15 +297,13 @@
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-          <div
-            class="absolute -top-1 right-9 flex justify-between rounded-2xl"
-          >
+          <div class="absolute -top-1 right-9 flex justify-between rounded-2xl">
             <div class="relative overflow-hidden rounded-2xl">
               <input
                 placeholder="جستجو ..."
                 type="text"
                 class="p-2 rounded-2xl placeholder:text-orange-600 text-2xl bg-gray-100 focus:outline-none transition-all duration-300 ease-linear"
-                :class="openSearch ? 'w-[900px]' : 'w-0 px-0 py-2'"
+                :class="openSearch ? 'lg:w-[650px] xl:w-[900px]' : 'w-0 px-0 py-2'"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
