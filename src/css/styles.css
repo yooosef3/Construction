@@ -31,3 +31,23 @@
     font-family: YekanBakh;
   }
 }
+
+.header-slider .header-pagination {
+  @apply inset-0 top-60 absolute mx-auto;
+}
+
+.header-slider {
+  @apply relative ;
+}
+
+.header-slider .swiper-wrapper {
+  @apply w-80 mt-10
+}
+
+.header-slider .swiper-wrapper section{
+  @apply h-36
+}
+
+.header-slider .header-pagination span {
+  @apply w-4 h-4 bg-orange-600 rounded-none;
+}

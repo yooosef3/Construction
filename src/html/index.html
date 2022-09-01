@@ -4,23 +4,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/swiper-bundle.min.css" />
     <title>Construction</title>
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
-    ></script>
   </head>
   <body class="bg-green-900">
-    <header class="flex justify-between p-4 shadow">
+    <header
+      class="fixed top-0 left-0 w-full z-10 flex justify-between p-4 shadow"
+    >
       <div class="flex justify-between gap-4 items-center">
         <!-- right hamburger and sidebar -->
-        <div class="relative" x-cloak x-data="{rightSide : false}">
+        <div class="relative" x-cloak x-data="{rightSide : false}" x-on:click.away="rightSide = false">
           <div
             x-on:click="rightSide = true"
             class="group flex flex-col gap-2 cursor-pointer font-bold transition-all mt-1"
           >
             <div
-              class="w-10 h-1 bg-black group-hover:bg-orange-600 duration-200"
+              class="w-10 h-[3px] bg-black group-hover:bg-orange-600 duration-200"
             ></div>
             <div
               class="w-8 h-1 bg-black group-hover:bg-orange-600 duration-200"
@@ -279,8 +278,8 @@
         </div>
         <div
           class="relative hidden lg:block"
-          x-cloak
           x-data="{openSearch: false}"
+          x-cloak
         >
           <svg
             x-on:click="openSearch = !openSearch"
@@ -335,14 +334,67 @@
           <a href="#">درباره ما</a>
         </li>
         <li
-          class="hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
+          class="relative group hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
         >
           <a href="#">گالری</a>
+          <div
+            class="absolute flex invisible group-hover:flex group-hover:visible group-hover:top-11 transition-all duration-200 flex-col gap-3 p-5 font-medium text-lg top-24 inset-x-0 h-50 rounded-sm shadow-md w-60 bg-white"
+          >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >گالری گرید</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >گالری تمام صفحه</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >گالری ستونی</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >گالری ستونی تمام صفحه</a
+            >
+          </div>
         </li>
         <li
-          class="hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
+          class="relative group hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
         >
           <a href="#">بلاگ</a>
+          <div
+            class="absolute flex invisible group-hover:flex group-hover:visible group-hover:top-11 transition-all duration-200 flex-col gap-3 p-5 font-medium text-lg top-24 inset-x-0 h-50 rounded-sm shadow-md w-48 bg-white"
+          >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >کلاسیک</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >بلاگ</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >بلاگ 1</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >بلاگ 2</a
+            >
+            <a
+              href="#"
+              class="hover:pr-2 text-gray-800 hover:border-r-4 invisible group-hover:visible hover:text-orange-600 border-orange-600 transition-all duration-200"
+              >پست</a
+            >
+          </div>
         </li>
         <li
           class="hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
@@ -350,32 +402,362 @@
           <a href="#">تماس با ما</a>
         </li>
         <li
-          class="hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
+          x-data="{showPages: false}"
+          class="relative hover:border-b-4 hover:border-orange-600 cursor-pointer duration-200 pt-2"
         >
-          <a href="#">صفحات</a>
+          <a href="#" x-on:click="showPages = !showPages">صفحات</a>
+          <div
+            class="absolute bg-white -right-[35rem] mx-auto rounded-sm p-2 top-11 flex visible scale-100  justify-between duration-200 shadow-md"
+            x-show="showPages"
+            x-on:click.away="showPages = false"
+          >
+            <div class="w-96 px-54">
+              <h1 class="text-orange-600 transition-all duration-200 p-5">
+                المان ها
+              </h1>
+              <div class="flex gap-3 p-5 border-l border-gray-600">
+                <div class="text-xl w-32 ml-12 flex flex-col gap-5 text">
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >تایپوگرافی</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >فرم ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >دکمه ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >تب ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >متن ها</a
+                  >
+                </div>
+                <div class="text-xl w-32 flex flex-col gap-5 text">
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >شمارنده ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >ایکون ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >نوار پیشرفت
+                  </a>
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                  >
+                    سیستم گرید</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >فونت ها</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="w-96 px-54">
+              <h1 class="text-orange-600 transition-all duration-200 p-5">
+                صفحات اضافی
+              </h1>
+              <div class="flex gap-3 p-5 border-l border-gray-600">
+                <div class="text-xl w-32 ml-12 flex flex-col gap-5 text">
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >خدمات</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >خدمات تکی</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >تیم ما</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >نظرات</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >404</a
+                  >
+                </div>
+                <div class="text-xl w-32 flex flex-col gap-5 text">
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >503</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >قیمت ها</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >به زودی</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >FAQ</a
+                  >
+                  <a
+                    href="#"
+                    class="hover:pr-2 text-gray-800 hover:border-r-4 hover:text-orange-600 border-orange-600 transition-all duration-200"
+                    >نتایج جستجو</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- header swiper slider  -->
+            <div class="p-5">
+              <h1 class="text-orange-600">نمونه کارهای ما</h1>
+              <div class="swiper header-slider">
+                <div class="swiper-wrapper">
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-1-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white hidden inset-2 transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ffff"
+                          class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                          />
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                          مرکز تجارت جهانی
+                        </h1>
+                      </a>
+                    </div>
+                  </section>
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-2-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white inset-2 hidden transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ffff"
+                          class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                          />
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                          موزه تاریخی
+                        </h1>
+                      </a>
+                    </div>
+                  </section>
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-3-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white inset-2 hidden transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ffff"
+                          class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                          />
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                          ساختمان اداری
+                        </h1>
+                      </a>
+                    </div>
+                  </section>
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-4-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white inset-2 hidden transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ffff"
+                          class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                          />
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                          شهر بازی پیشرفته
+                        </h1>
+                      </a>
+                    </div>
+                  </section>
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-5-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white inset-2 hidden transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ffff"
+                          class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                          />
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                          مرکز خرید بزرگ
+                        </h1>
+                      </a>
+                    </div>
+                  </section>
+                  <section class="relative group swiper-slide overflow-hidden">
+                    <img
+                      src="/assets/images/navbar-6-272x288.jpg"
+                      class="scale-110 group-hover:scale-100 duration-200"
+                    />
+                    <div
+                      class="absolute border text-center border-white inset-2 hidden transition duration-200 group-hover:flex flex-col justify-center items-center gap-2 bg-black bg-opacity-40"
+                    >
+                      <a href="#">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="#ffff"
+                        class="w-8 h-8 duration-200 hover:stroke-gray-400"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                        />
+                      </svg>
+                      </a>
+                    <a href="#">
+                      <h1 class="text-white font-thin text-[20px] duration-200 hover:text-orange-300">
+                        مرکز بهداشت
+                      </h1>
+                    <a/>  
+                 </div>
+                  </section>
+                </div>
+                <div class="swiper-pagination header-pagination"></div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
       <div class="flex gap-4 justify-items-center">
         <div class="h-4 w-36 cursor-pointer sm:w-44">
           <img src="../../assets/images/logo-default-214x50.png" />
         </div>
-        <div>
+        <div x-data="{leftSidebar: false}" x-on:click.away="leftSidebar = false">
           <div
-            class="group flex flex-col gap-2 cursor-pointer font-bold transition-all mt-1 lg:hidden"
+            x-on:click="leftSidebar = !leftSidebar"
+            class="group flex flex-col gap-2 cursor-pointer font-bold transition-all duration-300 mt-1 lg:hidden"
+            :class="leftSidebar ? 'rotate-180 ' : ''"
           >
             <div
-              class="w-8 h-1 bg-black group-hover:bg-zinc-800 duration-200"
+              :class="leftSidebar ? 'rotate-45 w-4  translate-y-[8px] h-[3px] translate-x-1' : ''"
+              class="h-[3px] bg-black group-hover:bg-zinc-800 duration-300"
             ></div>
             <div
-              class="w-8 h-1 bg-black group-hover:bg-zinc-800 duration-200"
+              class="w-8 h-1 bg-black group-hover:bg-zinc-800 duration-300"
             ></div>
             <div
-              class="w-8 h-1 bg-black group-hover:bg-zinc-800 duration-200"
+              :class="leftSidebar ? '-rotate-45 w-4 h-[3px] -translate-y-[8px] translate-x-1' : 'h-1'"
+              class="bg-black group-hover:bg-zinc-800 duration-300"
             ></div>
           </div>
           <!-- left sidebar -->
           <aside
-            class="fixed pt-24 overflow-y-auto left-0 top-0 w-72 bg-white h-full shadow-md"
+            :class="leftSidebar ? 'left-0 ' : '-left-72 opacity-0'"
+            class="fixed overflow-y-auto pt-10 w-72 top-0 transition-all duration-300 ease-linear bg-white h-[93vh] mt-[7.5vh] shadow-md"
           >
             <!-- search -->
             <div class="relative w-64 mx-auto">
@@ -402,7 +784,7 @@
               </div>
             </div>
             <!-- icons -->
-            <div class="flex gap-2 border-b border-gray-500 justify-start p-5">
+            <div class="flex gap-3 border-b border-gray-300 justify-start p-5">
               <svg
                 class="h-7 w-7 text-black duration-200 hover:text-orange-600"
                 viewBox="0 0 24 24"
@@ -485,7 +867,7 @@
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-4 h-4 transition-all duration-150 ease-linear"
+                    class="w-4 h-4 transition-all duration-[420ms] ease-linear"
                   >
                     <path
                       stroke-linecap="round"
@@ -538,7 +920,7 @@
                     stroke="currentColor"
                     x-on:click="openBlog = !openBlog"
                     :class="openBlog ? 'rotate-180' : ''"
-                    class="w-4 h-4 transition-all duration-150 ease-linear"
+                    class="w-4 h-4 transition-all duration-[420ms] ease-linear"
                   >
                     <path
                       stroke-linecap="round"
@@ -596,7 +978,7 @@
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-4 h-4 transition-all duration-150 ease-linear"
+                    class="w-4 h-4 transition-all duration-[420ms] ease-linear"
                     :class="openPages ? 'rotate-180' : ''"
                     x-on:click="openPages = !openPages"
                   >
@@ -609,7 +991,7 @@
                 </li>
                 <div
                   :class="openPages ? 'max-h-full' : 'max-h-0 '"
-                  class="bg-gray-200 overflow-hidden transition-all duration-700 ease-linear"
+                  class="bg-gray-200 overflow-auto transition-all duration-700 ease-linear"
                 >
                   <h1
                     class="text-orange-600 p-4 text-xl font-bold bg-white border-b-[1px] border-gray-400"
@@ -722,5 +1104,18 @@
         </div>
       </div>
     </header>
+    <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script src="/src/js/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".header-slider", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
