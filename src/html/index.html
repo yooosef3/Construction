@@ -9,7 +9,7 @@
   </head>
   <body class="bg-green-900">
     <header
-      class="fixed top-0 left-0 w-full z-10 flex justify-between p-4 shadow"
+      class="fixed top-0 left-0 w-full z-10 flex justify-between p-4 shadow bg-white"
     >
       <div class="flex justify-between gap-4 items-center">
         <!-- right hamburger and sidebar -->
@@ -296,7 +296,7 @@
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-          <div class="absolute -top-1 right-9 flex justify-between rounded-2xl">
+          <div class="absolute -top-1 right-9 flex justify-between z-10 rounded-2xl">
             <div class="relative overflow-hidden rounded-2xl">
               <input
                 placeholder="جستجو ..."
@@ -843,7 +843,7 @@
             <ul class="flex flex-col gap-1 mt-5">
               <!-- left sidebar home -->
               <li
-                class="flex duration-200 hover:text-white hover:bg-orange-600 justify-between cursor-pointer items-center bg-orange-600 text-white h-[55px] px-5"
+                class="flex duration-200 hover:text-white hover:bg-orange-600 justify-start cursor-pointer items-center bg-orange-600 text-white h-[55px] px-5"
               >
                 <a href="#" class="text-xl font-semibold"> خانه</a>
               </li>
@@ -1104,6 +1104,41 @@
         </div>
       </div>
     </header>
+    <main>
+      <!-- start top slider -->
+      <section class="mt-[63px] lg:mt-[76px]">
+        <div class="swiper top-slider relative ">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+              <div style="background-image: url('../../assets/images/slider-1-slide-1-1770x742.jpg');" ></div>
+              <div class="absolute text-white p-4 inset-0 w-full h-full flex flex-col justify-center items-center text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-7 lg:mb-8">ما دنیای جدید را می سازیم</h1>
+                <p class="text-lg lg:text-xl mb-8 lg:mb-9 max-w-xl">ما در Vitagex طیف کاملی از خدمات ساختمانی را به صنایع مختلف از جمله تجاری، صنعتی، سازمانی و پزشکی ارائه می‌کنیم.</p>
+                <button type="button" class="bg-orange-600 py-3 px-8 text-2xl rounded-md hover:bg-orange-700 duration-200">بیشتر بدانید</button>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div style="background-image: url('../../assets/images/slider-1-slide-2-1770x742.jpg');"></div>
+              <div class="absolute text-white p-4 inset-0 w-full h-full flex flex-col justify-center items-center text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-7 lg:mb-8">متعهد و حرفه ای</h1>
+                <p class="text-lg lg:text-xl mb-8 lg:mb-9 max-w-xl">ما در شرکت بهترین و متعهدترین کارشناسان ساختمانی را استخدام می کنیم که صنعت را به جلو می برند و فضاهای عالی برای زندگی و کار شما ایجاد می کنند.</p>
+                <button type="button" class="bg-orange-600 py-3 px-8 text-2xl rounded-md hover:bg-orange-700 duration-200">بیشتر بدانید</button>
+              </div>
+            </div>
+            <div class="swiper-slide relative">
+              <div style="background-image: url('../../assets/images/slider-1-slide-3-1770x742.jpg');"></div>
+              <div class="absolute text-white p-4 inset-0 w-full h-full flex flex-col justify-center items-center text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-7 lg:mb-8">شهرت ضد زنگ</h1>
+                <p class="text-lg lg:text-xl mb-8 lg:mb-9 max-w-xl">ما برای کار با کیفیت و صداقت خود در برخورد با مشتریان، معماران، تامین کنندگان و پیمانکاران فرعی شهرت برجسته ای به دست آورده ایم.</p>
+                <button type="button" class="bg-orange-600 py-3 px-8 text-2xl rounded-md hover:bg-orange-700 duration-200">بیشتر بدانید</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination "></div>
+        </div>
+      </section>
+      <!-- end top slider -->
+    </main>
     <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="/src/js/swiper-bundle.min.js"></script>
     <script>
@@ -1115,6 +1150,18 @@
           dynamicBullets: true,
           clickable: true,
         },
+      });
+
+      var swiper = new Swiper(".top-slider", {
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+        delay: 4000,
+        },
+        loop: true,
       });
     </script>
   </body>
