@@ -1821,6 +1821,10 @@ html {
   stroke: #9ca3af;
 }
 
+.hover\:pr-2:hover {
+  padding-right: 0.5rem;
+}
+
 .hover\:text-orange-600:hover {
   --tw-text-opacity: 1;
   color: rgb(234 88 12 / var(--tw-text-opacity));
