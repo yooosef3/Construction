@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/css/swiper-bundle.min.css" />
     <title>Construction</title>
   </head>
-  <body class="">
+  <body>
     <header
       class="fixed top-0 left-0 w-full z-10 flex justify-between p-4 shadow bg-white"
     >
@@ -1188,6 +1188,188 @@
           </div>
         </div>
       <!-- end sevices section -->
+
+      <!-- start latest projects section -->
+        <section class="mt-14" x-data="{projectTab: *}">
+          <div class="text-center mx-auto px-5">
+            <h1 class="text-3xl lg:text-4xl font-bold mb-8">آخرین پروژه ها</h1>
+            <p class="text-lg max-w-xl mx-auto">
+              در مجموعه ما، می توانید آخرین پروژه های ساختمانی را که برای مشتریان متعدد خود طراحی و ساخته ایم، مرور کنید. سازندگان و معماران واجد شرایط ما همیشه آماده هستند تا چیزی دیدنی برای شما ایجاد کنند.
+            </p>
+          <div x-data="{openFilter: false}">
+            <div class="relative md:hidden border-2 border-black rounded-sm mx-auto mt-8 text-2xl w-fit font-semibold px-4 py-1 flex items-center hover:bg-orange-600 duration-200 hover:text-white hover:border-orange-400 cursor-pointer mb-8">
+              <div class="flex items-center">
+                <span class="ml-4">
+                  فیلتر
+                </span>
+                <svg x-on:click="openFilter = !openFilter" :class="openFilter ? 'rotate-180' : ''" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+                </svg>                
+              </div>
+              <ul x-show="openFilter" x-on:click.away="openFilter = false" class="absolute z-10 bg-white text-gray-700 top-14 -right-5 w-40 shadow-2xl">
+                <li x-on:click="projectTab = *" class="bg-orange-600 py-1 text-white">همه</li>
+                <li x-on:click="projectTab = 2" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200 ">تجاری</li>
+                <li x-on:click="projectTab = 1" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">مسکونی</li>
+                <li x-on:click="projectTab = 3" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">دیگر</li>
+              </ul>
+            </div>
+            <!-- medium filter -->
+            <div class="justify-center my-9 hidden md:flex">
+              <p x-on:click="projectTab = " class="text-2xl font-bold px-6 cursor-pointer text-orange-600 hover:text-orange-600 duration-200 border-l ">همه</p>
+              <p x-on:click="projectTab = 2" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">تجاری</p>
+              <p x-on:click="projectTab = 1" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">مسکونی</p>
+              <p x-on:click="projectTab = 3" class="text-2xl font-bold mx-5 cursor-pointer hover:text-orange-600 duration-200 text-gray-600">دیگر</p>
+            </div>
+          </div>
+          </div>
+          <!-- projects images -->
+          <div class="md:flex md:flex-wrap mx-auto gap-6 justify-center">
+            <div :class="{ flex: projectTab === 2, hidden: projectTab !== 2 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-1-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden  bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">دادگاه LAKEWOOD</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">دادگاه LAKEWOOD</a>
+                <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 3, hidden: projectTab !== 3 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-2-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">FINN LTD. مقر</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">FINN LTD. مقر</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 1, hidden: projectTab !== 1 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-3-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">باشگاه آبی سن دیگو</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">باشگاه آبی سن دیگو</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 2, hidden: projectTab !== 2 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-4-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">8158 FULTON STREET</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">8158 FULTON STREET</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 3, hidden: projectTab !== 3 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-5-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">گالری هنر مدرن</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">گالری هنر مدرن</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 1, hidden: projectTab !== 1 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-6-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">موزه تاریخ</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">موزه تاریخ</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 2, hidden: projectTab !== 2 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-7-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">296 MARVON Street</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">296 MARVON Street</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+            <div :class="{ flex: projectTab === 3, hidden: projectTab !== 3 }" class="relative group mb-8 overflow-hidden justify-center">
+              <img src="../../assets/images/fullwidth-gallery-8-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
+              <div class="absolute lg:hidden bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-8 h-8 cursor-pointer hover:stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white hover:text-orange-600 duration-200 text-lg font-bold">296 MARVON STREET</a>
+              </div>
+              <div class="absolute hidden px-2 duration-200 lg:group-hover:flex flex-col justify-center items-center inset-6 bg-black bg-opacity-40 rounded-sm gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" class="w-11 h-11 cursor-pointer stroke-orange-600 duration-200">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>                
+                <a href="#" class="text-white text-2xl hover:text-orange-600 duration-200 font-bold">296 MARVON STREET</a>
+                 <p class="text-gray-200 text-center text-xl">
+                  ما روی هر پروژه سخت کار می کنیم تا مفاهیم طراحی داخلی درجه یک را ارائه دهیم که خواسته های شما را برآورده کند.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- etest projects section -->
     </main>
     <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="/src/js/swiper-bundle.min.js"></script>
