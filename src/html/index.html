@@ -1190,7 +1190,7 @@
       <!-- end sevices section -->
 
       <!-- start latest projects section -->
-        <section class="mt-14" x-data="{projectTab: *}">
+        <section class="mt-14" x-data="{projectTab: 3}">
           <div class="text-center mx-auto px-5">
             <h1 class="text-3xl lg:text-4xl font-bold mb-8">آخرین پروژه ها</h1>
             <p class="text-lg max-w-xl mx-auto">
@@ -1207,7 +1207,7 @@
                 </svg>                
               </div>
               <ul x-show="openFilter" x-on:click.away="openFilter = false" class="absolute z-10 bg-white text-gray-700 top-14 -right-5 w-40 shadow-2xl">
-                <li x-on:click="projectTab = *" class="bg-orange-600 py-1 text-white">همه</li>
+                <li x-on:click="projectTab = 3" class="bg-orange-600 py-1 text-white">همه</li>
                 <li x-on:click="projectTab = 2" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200 ">تجاری</li>
                 <li x-on:click="projectTab = 1" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">مسکونی</li>
                 <li x-on:click="projectTab = 3" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">دیگر</li>
@@ -1215,7 +1215,7 @@
             </div>
             <!-- medium filter -->
             <div class="justify-center my-9 hidden md:flex">
-              <p x-on:click="projectTab = " class="text-2xl font-bold px-6 cursor-pointer text-orange-600 hover:text-orange-600 duration-200 border-l ">همه</p>
+              <p x-on:click="projectTab = 3" class="text-2xl font-bold px-6 cursor-pointer text-orange-600 hover:text-orange-600 duration-200 border-l ">همه</p>
               <p x-on:click="projectTab = 2" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">تجاری</p>
               <p x-on:click="projectTab = 1" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">مسکونی</p>
               <p x-on:click="projectTab = 3" class="text-2xl font-bold mx-5 cursor-pointer hover:text-orange-600 duration-200 text-gray-600">دیگر</p>
@@ -1223,7 +1223,7 @@
           </div>
           </div>
           <!-- projects images -->
-          <div class="md:flex md:flex-wrap mx-auto gap-6 justify-center">
+          <div class="md:flex md:flex-wrap mx-auto gap-6 justify-center animate-fadeInLeft duration-500">
             <div :class="{ flex: projectTab === 2, hidden: projectTab !== 2 }" class="relative group mb-8 overflow-hidden justify-center">
               <img src="../../assets/images/fullwidth-gallery-1-420x350.jpg" class="w-ful lg:group-hover:scale-[1.1] duration-200"/>
               <div class="absolute lg:hidden  bottom-0 bg-black bg-opacity-50 rounded-sm h-16 w-96 flex gap-1 flex-col items-center justify-center">
@@ -1369,10 +1369,68 @@
             </div>
           </div>
         </section>
-      <!-- etest projects section -->
+      <!-- end projects section -->
+
+      <!-- start stats section -->
+        <section class="bg-stats h-full w-full" id="stats" style="background: url('../../assets/images/img-decorative-720x580.png') no-repeat center; background-size: cover;">
+          <!-- number and stats -->
+          <div>
+            <!-- number -->
+            <div class="text-center flex flex-col md:flex-row justify-center items-center xl:justify-evenly">
+              <div class="">
+                <h1 class="text-[350px]  sm:text-[380px] lg:text-[420px] font-[900] scroll-counter" data-counter-time="40" style="background: url('../../assets/images/text-image.jpg') no-repeat;
+                -webkit-background-clip: text; background-size:100% 100%;background-position: 0px 110px;
+                color: transparent;font-family: Impact" >20
+                </h1>
+              </div>
+              <!-- stats info -->
+              <div class="px-5 sm:pr-36 md:px-0">
+                <h1 class="font-bold text-2xl sm:text-3xl lg:text-5xl border-gray-400 w-fit pr-4 border-r-4 mb-4">سال ها تجربه</h1>
+                <p class="w-72 text-gray-500 mb-8 text-lg xl:text-xl">شرکت ما از سال 2002 ارائه دهنده پیشرو خدمات ساختمانی به مشتریان در سراسر ایالات متحده بوده است.</p>
+                <a href="#" class="bg-orange-600 hover:bg-orange-700 duration-200 py-2 px-5 sm:text-xl text-white font-bold rounded-sm">در تماس باشید</a>
+              </div>
+            </div>
+            <!-- all stats and sponsor -->
+            <div class="flex flex-col lg:flex-row xl:flex-col lg:pr-8">
+              <!-- stats -->
+              <div class="justify-center xl:justify-evenly text-center items-center mt-11 lg:mt-3 xl:mt-0 flex flex-col xl:flex-row">
+                <div class="flex flex-col sm:gap-52 lg:gap-36 justify-center sm:flex-row">
+                  <div class="border-b-2 py-6">
+                    <h1 class="scroll-counter text-7xl font-bold" data-counter-time="40">2000</h1>
+                    <p class="text-gray-500 text-2xl">پروژه</p>
+                  </div>
+                  <div class="border-b-2 py-6">
+                    <h1 class="scroll-counter text-7xl font-bold" data-counter-time="40">40</h1>
+                    <p class="text-gray-500 text-2xl">شرکای ملی</p>
+                  </div>
+                </div>
+                <div class="flex flex-col sm:gap-52 justify-center sm:flex-row">
+                  <div class="border-b-2 sm:border-b-0 xl:border-b-2 py-6">
+                    <h1 class="scroll-counter text-7xl font-bold" data-counter-time="40">120</h1>
+                    <p class="text-gray-500 text-2xl">جوایز</p>
+                  </div>
+                  <div class="py-6 xl:border-b-2">
+                    <h1 class="scroll-counter text-7xl font-bold" data-counter-time="40">260</h1>
+                    <p class="text-gray-500 text-2xl">کارمند</p>
+                  </div>
+                </div>
+              </div>
+              <!-- sponsors -->
+              <div class="flex flex-col sm:flex-row flex-wrap mt-10 lg:mt-3 xl:mt-7 gap-6 lg:gap-2 items-center justify-center">
+                <div class="border rounded-sm group lg:hover:border-black duration-200"><img class="opacity-50 lg:group-hover:opacity-100 lg:hover:scale-[0.9] duration-200" src="../../assets/images/clients-9-270x117.png"/></div>
+                <div class="border rounded-sm group lg:hover:border-black duration-200"><img class="opacity-50 lg:group-hover:opacity-100 lg:hover:scale-[0.9] duration-200" src="../../assets/images/clients-10-270x117.png"/></div>
+                <div class="border rounded-sm group lg:hover:border-black duration-200"><img class="opacity-50 lg:group-hover:opacity-100 lg:hover:scale-[0.9] duration-200" src="../../assets/images/clients-11-270x117.png"/></div>
+                <div class="border rounded-sm group lg:hover:border-black duration-200"><img class="opacity-50 lg:group-hover:opacity-100 lg:hover:scale-[0.9] duration-200" src="../../assets/images/clients-3-270x117.png"/></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- end stats section -->
     </main>
     <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="/src/js/swiper-bundle.min.js"></script>
+    <script src="/src/js/jquery.counterup.min.js"></script>
+    <script src="/src/js/waypoints.min.js"></script>
     <script>
       var swiper = new Swiper(".header-slider", {
         slidesPerView: 2,
@@ -1396,5 +1454,65 @@
         loop: true,
       });
     </script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".scroll-counter");
+
+        counters.forEach(function (item) {
+            // Add new attributes to the counters with the '.scroll-counter' HTML class
+            item.counterAlreadyFired = false;
+            item.counterSpeed = item.getAttribute(
+                "data-counter-time");
+            item.counterTarget = +item.innerText;
+            item.counterCount = 0;
+            item.counterStep = item.counterTarget / item.counterSpeed;
+
+            item.updateCounter = function () {
+                item.counterCount = item.counterCount + item.counterStep;
+                item.innerText = Math.ceil(item.counterCount);
+
+                if (item.counterCount < item.counterTarget) {
+                    setTimeout(item.updateCounter, item.counterSpeed);
+                } else {
+                    item.innerText = item.counterTarget;
+                }
+            };
+        });
+
+        // Function to determine if an element is visible in the web page
+        let isElementVisible = function isElementVisible(el) {
+            let scroll = window.scrollY || window.pageYOffset;
+            let boundsTop = el.getBoundingClientRect().top + scroll;
+
+            let viewport = {
+                top: scroll,
+                bottom: scroll + window.innerHeight,
+            };
+
+            let bounds = {
+                top: boundsTop,
+                bottom: boundsTop + el.clientHeight,
+            };
+
+            return (
+                (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) || (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
+            );
+        };
+
+        // Funciton that will get fired uppon scrolling
+        let handleScroll = function handleScroll() {
+            counters.forEach(function (item, id) {
+                if (true === item.counterAlreadyFired)
+                    return
+                if (!isElementVisible(item)) return
+                item.updateCounter();
+                item.counterAlreadyFired = true;
+            });
+        };
+
+        // Fire the function on scroll
+        window.addEventListener("scroll", handleScroll);
+    })
+  </script>
   </body>
 </html>
