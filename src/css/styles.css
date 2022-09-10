@@ -30,59 +30,55 @@
   html {
     font-family: YekanBakh;
   }
+
+  .header-slider .header-pagination {
+    @apply inset-0 top-60 absolute mx-auto;
+  }
+
+  .header-slider {
+    @apply relative;
+  }
+
+  .header-slider .swiper-wrapper {
+    @apply w-80 mt-10;
+  }
+
+  .header-slider .swiper-wrapper section {
+    @apply h-36;
+  }
+
+  .header-slider .header-pagination span {
+    @apply w-4 h-4 bg-orange-600 rounded-none;
+  }
+
+  /* start top-slider */
+  .top-slider {
+    @apply h-[93vh] md:h-[60vh] xl:h-[80vh];
+  }
+
+  .top-slider .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    @apply absolute w-fit h-16 top-[90%] z-50 right-[35%] flex justify-center gap-5 md:top-[50%] md:right-[2%] md:rotate-90;
+  }
+
+  .top-slider .swiper-pagination-clickable .swiper-pagination-bullet {
+    @apply w-[40px] h-[4px] rounded-none bg-orange-600 md:bg-orange-600 md:w-[20px] md:h-[20px];
+  }
+
+  .top-slider .swiper-slide div {
+    @apply h-full bg-cover bg-center;
+  }
+
+  .top-slider .swiper-slide-active h1 {
+    @apply animate-fadeInLeft;
+  }
+
+  .top-slider .swiper-slide-active p {
+    @apply animate-fadeInRight;
+  }
+
+  .top-slider .swiper-slide-active button {
+    @apply animate-fadeInBottom;
+  }
+  /* end top-slider */
 }
-
-.header-slider .header-pagination {
-  @apply inset-0 top-60 absolute mx-auto;
-}
-
-.header-slider {
-  @apply relative;
-}
-
-.header-slider .swiper-wrapper {
-  @apply w-80 mt-10;
-}
-
-.header-slider .swiper-wrapper section {
-  @apply h-36;
-}
-
-.header-slider .header-pagination span {
-  @apply w-4 h-4 bg-orange-600 rounded-none;
-}
-
-/* start top-slider */
-.top-slider {
- @apply h-[93vh] md:h-[60vh] xl:h-[80vh];
-}
-
-.top-slider .swiper-pagination-vertical.swiper-pagination-bullets,
-.swiper-vertical > .swiper-pagination-bullets {
-  @apply absolute w-fit h-16 top-[90%] z-50 right-[35%] flex justify-center gap-5 md:top-[50%] md:right-[2%] md:rotate-90;
-}
-
-.top-slider .swiper-pagination-clickable .swiper-pagination-bullet {
-  @apply w-[40px] h-[4px] rounded-none bg-orange-600 md:bg-orange-600 md:w-[20px] md:h-[20px];
-}
-
-.top-slider .swiper-slide div {
-  @apply h-full bg-cover bg-center;
-}
-
-.top-slider .swiper-slide-active h1 {
-  @apply animate-fadeInLeft;
-}
-
-.top-slider .swiper-slide-active p{
-  @apply animate-fadeInRight
-}
-
-.top-slider .swiper-slide-active button{
-  @apply animate-fadeInBottom
-}
-/* end top-slider */
-
-/* <!-- start stats section --> */
-
-/* <!-- end stats section --> */
