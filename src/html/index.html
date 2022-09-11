@@ -1207,18 +1207,18 @@
                 </svg>                
               </div>
               <ul x-show="openFilter" x-on:click.away="openFilter = false" class="absolute z-10 bg-white text-gray-700 top-14 -right-5 w-40 shadow-2xl">
-                <li x-on:click="projectTab = 3" class="bg-orange-600 py-1 text-white">همه</li>
-                <li x-on:click="projectTab = 2" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200 ">تجاری</li>
-                <li x-on:click="projectTab = 1" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">مسکونی</li>
-                <li x-on:click="projectTab = 3" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">دیگر</li>
+                <li x-on:click="projectTab = 3" :class="projectTab === 3 ? 'text-orange-600 bg-orange-200': 'text-gray-600'" class="hover:bg-orange-200 hover:text-orange-600 py-1">همه</li>
+                <li x-on:click="projectTab = 2" :class="projectTab === 2 ? 'text-orange-600 bg-orange-200': 'text-gray-600'" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200 ">تجاری</li>
+                <li x-on:click="projectTab = 1" :class="projectTab === 1 ? 'text-orange-600 bg-orange-200': 'text-gray-600'" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">مسکونی</li>
+                <li x-on:click="projectTab = 3" :class="projectTab === 3 ? 'text-orange-600 bg-orange-200': 'text-gray-600'" class="hover:text-orange-600 py-1 hover:bg-orange-200 duration-200">دیگر</li>
               </ul>
             </div>
             <!-- medium filter -->
             <div class="justify-center my-9 hidden md:flex">
-              <p x-on:click="projectTab = 3" class="text-2xl font-bold px-6 cursor-pointer text-orange-600 hover:text-orange-600 duration-200 border-l ">همه</p>
-              <p x-on:click="projectTab = 2" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">تجاری</p>
-              <p x-on:click="projectTab = 1" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 text-gray-600 border-l ">مسکونی</p>
-              <p x-on:click="projectTab = 3" class="text-2xl font-bold mx-5 cursor-pointer hover:text-orange-600 duration-200 text-gray-600">دیگر</p>
+              <p x-on:click="projectTab = 3" :class="projectTab === 3 ? 'text-orange-600': 'text-gray-600'" class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 border-l ">همه</p>
+              <p x-on:click="projectTab = 2" :class="projectTab === 2 ? 'text-orange-600': 'text-gray-600' " class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 border-l ">تجاری</p>
+              <p x-on:click="projectTab = 1" :class="projectTab === 1 ? 'text-orange-600': 'text-gray-600' " class="text-2xl font-bold px-6 cursor-pointer hover:text-orange-600 duration-200 border-l ">مسکونی</p>
+              <p x-on:click="projectTab = 3" :class="projectTab === 3 ? 'text-orange-600': 'text-gray-600' " class="text-2xl font-bold mx-5 cursor-pointer hover:text-orange-600 duration-200">دیگر</p>
             </div>
           </div>
           </div>
@@ -1472,6 +1472,63 @@
             </div>
           </section>
       <!-- end team section -->
+
+      <!-- start work section -->
+          <section class="pb-96 mt-14 md:px-5 lg:px-10 flex items-center flex-col lg:flex-row lg:gap-8">
+            <div x-data="{work: 1}" class="lg:w-[50%] w-full px-16 text-center md:text-right">
+              <h1 class="text-gray-800 text-2xl md:text-3xl font-semibold">نحوه کار ما چگونه است؟</h1>
+              <ul class="flex justify-center md:justify-between md:border-b-4 border-gray-400 gap-5 text-gray-500 mt-5">
+                <li x-on:click="work=1" :class="work === 1 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">01</li>
+                <li x-on:click="work=2" :class="work === 2 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">02</li>
+                <li x-on:click="work=3" :class="work === 3 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">03</li>
+                <li x-on:click="work=4" :class="work === 4 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">04</li>
+              </ul>
+              <div :class='{ block: work === 1, hidden: work !== 1 }'>
+                <div class="mt-8">
+                  <h1 class="text-2xl md:text-3xl font-medium mb-3">مشاوره اولیه</h1>
+                  <p class="max-w-[440px] md:max-w-full lg:text-lg md:m-0 mx-auto text-gray-600 font-medium">ما اولین جلسه خود را با شما و پروژه شما آشنا خواهیم کرد و آنچه را که می توانید در طول ساخت و ساز انتظار داشته باشید بیان کنیم.</p>
+                </div>
+                <div class="mt-5 flex gap-5 justify-center md:justify-start">
+                  <a href="#" class="text-white bg-orange-600 hover:bg-orange-700 duration-200 text-xl rounded-sm mt-4 py-1 flex items-center px-2 md:px-6">با تماس بگیرید</a>
+                  <a href="#" class="text-black border-4 hover:text-white bg-white hover:bg-orange-600 duration-200 text-xl rounded-sm mt-4 py-2 px-11 md:px-14">دانلود</a>
+                </div>
+              </div>
+              <div :class='{ block: work === 2, hidden: work !== 2 }'>
+                <div class="mt-8">
+                  <h1 class="text-2xl md:text-3xl font-medium mb-3">برنامه ریزی پروژه</h1>
+                  <p class="max-w-[440px]  md:max-w-full lg:text-lg md:m-0 mx-auto text-gray-600 font-medium">برای ساخت و ساز مسکونی، برنامه ریزی مناسب به ما کمک می کند تا پروژه را به سرعت پیش ببریم. ما بسیار مراقب هستیم تا کمترین اختلال ایجاد کنیم.</p>
+                </div>
+                <div class="mt-5 flex gap-5 justify-center md:justify-start">
+                  <a href="#" class="text-white bg-orange-600 hover:bg-orange-700 duration-200 text-xl rounded-sm mt-4 py-1 flex items-center px-2 md:px-6">با تماس بگیرید</a>
+                  <a href="#" class="text-black border-4 hover:text-white bg-white hover:bg-orange-600 duration-200 text-xl rounded-sm mt-4 py-2 px-11 md:px-14">دانلود</a>
+                </div>
+              </div>
+              <div :class='{ block: work === 3, hidden: work !== 3 }'>
+                <div class="mt-8">
+                  <h1 class="text-2xl md:text-3xl font-medium mb-3">کار بر روی پروژه ساخت و ساز</h1>
+                  <p class="max-w-[440px]  md:max-w-full lg:text-lg md:m-0 mx-auto text-gray-600 font-medium">پس از اینکه همه جزئیات به توافق رسیدند، ما شروع به اجرای پروژه می کنیم و در عین حال به شما در مورد نحوه تکمیل مراحل ساخت و ساز نیز اطلاع می دهیم.</p>
+                </div>
+                <div class="mt-5 flex gap-5 justify-center md:justify-start">
+                  <a href="#" class="text-white bg-orange-600 hover:bg-orange-700 duration-200 text-xl rounded-sm mt-4 py-1 flex items-center px-2 md:px-6">با تماس بگیرید</a>
+                  <a href="#" class="text-black border-4 hover:text-white bg-white hover:bg-orange-600 duration-200 text-xl rounded-sm mt-4 py-2 px-11 md:px-14">دانلود</a>
+                </div>
+              </div>
+              <div :class='{ block: work === 4, hidden: work !== 4 }'>
+                <div class="mt-8">
+                  <h1 class="text-2xl md:text-3xl font-medium mb-3">ارائه نتیجه نهایی</h1>
+                  <p class="max-w-[440px]  md:max-w-full lg:text-lg md:m-0 mx-auto text-gray-600 font-medium">در نهایت، پروژه تمام شده را ارائه می کنیم و مطمئن می شویم که همه چیز همانطور که می خواهید انجام می شود. برخی تغییرات جزئی نیز در این مرحله امکان پذیر است.</p>
+                </div>
+                <div class="mt-5 flex gap-5 justify-center md:justify-start">
+                  <a href="#" class="text-white bg-orange-600 hover:bg-orange-700 duration-200 text-xl rounded-sm mt-4 py-1 flex items-center px-2 md:px-6">با تماس بگیرید</a>
+                  <a href="#" class="text-black border-4 hover:text-white bg-white hover:bg-orange-600 duration-200 text-xl rounded-sm mt-4 py-2 px-11 md:px-14">دانلود</a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-16 flex justify-center items-center">
+              <img src="../../assets/images/index-2-539x434.jpg" class="mx-auto cursor-pointer lg:hover:-translate-x-2 lg:hover:-translate-y-2 duration-200"/>
+            </div>
+          </section>
+      <!-- end work section -->
     </main>
     <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="/src/js/swiper-bundle.min.js"></script>
