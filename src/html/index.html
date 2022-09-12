@@ -1474,14 +1474,14 @@
       <!-- end team section -->
 
       <!-- start work section -->
-          <section class="pb-96 mt-14 md:px-5 lg:px-10 flex items-center flex-col lg:flex-row lg:gap-8">
+          <section class="pb-96 mt-14 -mb-72 md:px-5 lg:px-10 flex items-center flex-col lg:flex-row lg:gap-8">
             <div x-data="{work: 1}" class="lg:w-[50%] w-full px-16 text-center md:text-right">
               <h1 class="text-gray-800 text-2xl md:text-3xl font-semibold">نحوه کار ما چگونه است؟</h1>
               <ul class="flex justify-center md:justify-between md:border-b-4 border-gray-400 gap-5 text-gray-500 mt-5">
-                <li x-on:click="work=1" :class="work === 1 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">01</li>
-                <li x-on:click="work=2" :class="work === 2 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">02</li>
-                <li x-on:click="work=3" :class="work === 3 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">03</li>
-                <li x-on:click="work=4" :class="work === 4 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold pt-2 pb-1">04</li>
+                <li x-on:click="work=1" :class="work === 1 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold md:-mb-1 pt-2 pb-1">01</li>
+                <li x-on:click="work=2" :class="work === 2 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold md:-mb-1 pt-2 pb-1">02</li>
+                <li x-on:click="work=3" :class="work === 3 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold md:-mb-1 pt-2 pb-1">03</li>
+                <li x-on:click="work=4" :class="work === 4 ? 'border-orange-600 text-orange-600 md:border-b-4' : 'border-gray-500' " class="border-y-4 md:border-y-0 cursor-pointer hover:text-orange-600 duration-200 text-xl md:text-3xl font-bold md:-mb-1 pt-2 pb-1">04</li>
               </ul>
               <div :class='{ block: work === 1, hidden: work !== 1 }'>
                 <div class="mt-8">
@@ -1529,6 +1529,48 @@
             </div>
           </section>
       <!-- end work section -->
+
+      <!-- start comments section -->
+          <section class="bg-gray-100 py-8">
+            <h1 class="text-center mb-11 text-3xl lg:text-4xl font-bold">مردم چی میگن؟</h1>
+            <div class="flex px-5 flex-col lg:flex-row gap-4 justify-center items-center">
+              <div class="shadow-lg px-3 bg-white rounded-md lg:py-9 py-7">
+                <div class="flex gap-8 mb-5 items-center">
+                  <img src='../../assets/images/user-11-75x75.jpg' class="rounded-full cursor-pointer"/>
+                  <div>
+                    <h2 class="text-lg hover:text-orange-600 duration-200 cursor-pointer font-semibold">CATHERINE WILLIAMS</h2>
+                    <p class="text-orange-600 font-semibold">کاربر</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  کلمات به سادگی نمی توانند سطح قدردانی و قدردانی را که نسبت به اشتیاق و فداکاری تیم شما احساس می کنم بیان کنند زیرا آنها حیاط خلوت من را کاملاً متحول کردند.
+                </p>
+              </div>
+              <div class="shadow-lg px-3 bg-white rounded-md lg:py-9 py-7">
+                <div class="flex gap-8 mb-5 items-center">
+                  <img src='../../assets/images/user-12-75x75.jpg' class="rounded-full cursor-pointer"/>
+                  <div>
+                    <h2 class="text-lg hover:text-orange-600 duration-200 cursor-pointer font-semibold">RUPERT WOOD</h2>
+                    <p class="text-orange-600 font-semibold">کاربر</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  Vitagex شریک حیاتی ما در توسعه مجدد پارک اداری West End Center بوده است. تیم آنها نمی تواند با هیچ پیمانکاری دیگری که در 15 سال گذشته با آنها کار کرده ام رقابت کند.                </p>
+              </div>
+              <div class="shadow-lg px-3 bg-white rounded-md lg:py-9 py-7">
+                <div class="flex gap-8 mb-5 items-center">
+                  <img src='../../assets/images/user-20-75x75.jpg' class="rounded-full cursor-pointer"/>
+                  <div>
+                    <h2 class="text-lg hover:text-orange-600 duration-200 cursor-pointer font-semibold">SAMANTHA BROWN</h2>
+                    <p class="text-orange-600 font-semibold">کاربر</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  این شرکت در مدیریت انتقال ما به دفتر جدید کار فوق العاده ای انجام داد. روال هایی که آنها برای اطمینان از اینکه پروژه در مسیر درست و به موقع خود به طور بی عیب و نقص تکمیل می شود، حفظ کردند.                </p>
+              </div>
+            </div>
+          </section>
+      <!-- end comments section -->
     </main>
     <script src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="/src/js/swiper-bundle.min.js"></script>
